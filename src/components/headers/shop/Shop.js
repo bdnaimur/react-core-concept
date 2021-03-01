@@ -36,14 +36,15 @@ const Shop = () => {
     // }
     return (
         <div className="">
+            <div style={{textAlign:'center', backgroundColor:'lightcyan'}}>
+                <Cart cart={cart} ></Cart>
+            </div>
             <div className="grid-display">
                 {product.map(pd => <Product handleAddProduct={handleProduct} product={pd}>
 
                 </Product>)}
             </div>
-            <div className="">
-                <Cart cart={cart} ></Cart>
-            </div>
+            
         </div>
         
     );

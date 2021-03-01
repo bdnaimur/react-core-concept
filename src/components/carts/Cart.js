@@ -7,12 +7,14 @@ const Cart = (props) => {
     const [player, setPlayer] = useState([]);
     // const newPlayer = [...player, cart];
     let totalCost = 0;
+    let salary = 0;
     let selectedPlayers = "";
     for (let i = 0; i < cart.length; i++) {
         const cost = cart[i];
-        <h2>{cost.name}</h2>
         totalCost += cost.salary;
-        selectedPlayers += (i+1)+"."+" "+ cost.name +" ";       
+           
+        salary = cost.salary;  
+        selectedPlayers += (i+1)+"."+" "+ cost.name +" "+ "(" +salary+")" +" "; 
     }
     const clickDetails = () =>{
         console.log();
@@ -25,7 +27,7 @@ const Cart = (props) => {
     return (
         <div>
             <h4>Selected Players: {props.cart.length}</h4>
-            <h6>Total Cost: {totalCost}</h6>
+            <h6>Total Cost $: {totalCost}</h6>
             <p>Players: {selectedPlayers}</p>
             <button onClick={clickDetails}>Details</button>
             <Details></Details>
